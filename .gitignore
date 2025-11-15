@@ -1,9 +1,9 @@
-# Dependencies (The culprit of the 34k files)
+# Dependencies
 node_modules/
 .pnp
 .pnp.js
 
-# Next.js Build Output
+# Next.js
 .next/
 out/
 build/
@@ -13,11 +13,12 @@ build/
 .env
 .env.local
 
-# Ignore heavy audio processing data
+# Heavy Audio (We will force add these later)
 python/dataset/
-dataset/
+*.mscz
 
-# Ignore ALL WAV files (Too big, use MP3 for web)
-*.wav
+
+
+
 __pycache__
 .trunk
