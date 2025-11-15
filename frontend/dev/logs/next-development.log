@@ -1,0 +1,9 @@
+[00:59:38.657] Server  ERROR   Error: ENOENT: no such file or directory, scandir '/Users/khalidibrahim/portfolio-msc/app'
+[00:59:38.659] Server  ERROR    ⨯ "unhandledRejection:" Error: ENOENT: no such file or directory, scandir '/Users/khalidibrahim/portfolio-msc/app'
+[00:59:38.661] Server  ERROR    ⨯ "unhandledRejection: " Error: ENOENT: no such file or directory, scandir '/Users/khalidibrahim/portfolio-msc/app'
+[00:59:38.696] Server  ERROR   Error: ENOENT: no such file or directory, scandir '/Users/khalidibrahim/portfolio-msc/app'
+[00:59:38.705] Server  ERROR   Error: ENOENT: no such file or directory, scandir '/Users/khalidibrahim/portfolio-msc/app'
+[00:59:38.716] Server  ERROR   Error: ENOENT: no such file or directory, scandir '/Users/khalidibrahim/portfolio-msc/app'
+[00:59:38.724] Server  ERROR   Error: ENOENT: no such file or directory, scandir '/Users/khalidibrahim/portfolio-msc/app'
+[00:59:39.218] Server  LOG      ✓ Compiled in 1674ms
+[00:59:52.237] Server  LOG      ✓ Compiled in 1582ms
