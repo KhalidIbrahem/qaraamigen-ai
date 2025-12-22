@@ -25,8 +25,7 @@ export async function POST(req: Request) {
       }
     });
 
-    // 2. Polling Loop: Check status every 1 second until done
-    // This bypasses the "Stream" issue by getting the final URL string
+   
     while (prediction.status !== "succeeded" && prediction.status !== "failed") {
       await new Promise((resolve) => setTimeout(resolve, 1000)); // Wait 1 sec
       prediction = await replicate.predictions.get(prediction.id);
@@ -37,7 +36,7 @@ export async function POST(req: Request) {
       throw new Error("Prediction failed on Replicate side.");
     }
 
-    // 3. Extract the URL (It is now guaranteed to be a string or array of strings)
+   
     const output = prediction.output;
     console.log("📦 Final Output:", output);
 

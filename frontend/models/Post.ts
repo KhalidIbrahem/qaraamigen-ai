@@ -9,5 +9,5 @@ const PostSchema = new mongoose.Schema({
   date: { type: Date, default: Date.now },
 });
 
-// Prevent recompilation error in Next.js
+
 export default mongoose.models.Post || mongoose.model("Post", PostSchema);

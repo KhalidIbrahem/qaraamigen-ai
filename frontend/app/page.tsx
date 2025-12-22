@@ -1,7 +1,7 @@
 "use client";
 
 import ProjectCard from "@/components/ui/ProjectCard";
-import GenerativeMusicFlow from "@/components/GenerativeMusicFlow";
+
 import {
   FaCode,
   FaMusic,

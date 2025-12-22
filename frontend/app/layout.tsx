@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import SessionProvider from "@/components/providers/SessionProvider";
 import { Toaster } from "sonner";
 
-import MusicWaves from "@/components/animations/MusicWaves";
+
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrains = JetBrains_Mono({
@@ -36,7 +36,7 @@ export default function RootLayout({
         <SessionProvider>
           <div className="fixed inset-0 -z-10">
            
-            <MusicWaves />
+            
           </div>
 
           <div className="absolute inset-0 bg-gradient-radial from-transparent via-cosmos-950/50 to-cosmos-950 -z-5 pointer-events-none"></div>

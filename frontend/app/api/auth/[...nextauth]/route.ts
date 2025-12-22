@@ -9,7 +9,7 @@ const handler = NextAuth({
     }),
   ],
   pages: {
-    signIn: '/auth/signin', // We will build a custom login page
+    signIn: '/auth/signin', 
   },
   callbacks: {
     async session({ session, token }) {

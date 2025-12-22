@@ -14,17 +14,17 @@ export async function POST(req: Request) {
       User Question: ${message}
     `;
 
-    // --- ROBUST MODEL SELECTION ---
-    // We try the newest model first. If it fails, we fallback.
+ 
+   
     let model;
     try {
-       // Try the fast model first
+
        model = genAI.getGenerativeModel(
         { model: "gemini-2.5-flash" }
         
        );
     } catch (err) {
-       // Fallback to standard pro
+      
        console.log("Switching to fallback model...");
        model = genAI.getGenerativeModel({ model: "gemini-pro" });
     }
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
   } catch (error: any) {
     console.error("Gemini API Critical Error:", error);
     
-    // Return the actual error to the chat window so we can see it
+    
     return NextResponse.json(
       { error: `API Error: ${error.message || "Unknown Error"}` }, 
       { status: 500 }
