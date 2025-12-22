@@ -28,7 +28,8 @@ export default function GenerativeMusicFlow() {
   const floatingTransition = {
     duration: 6,
     repeat: Infinity,
-    ease: "easeInOut"
+    ease: "easeInOut"  as const 
+    
   };
 
   return (
