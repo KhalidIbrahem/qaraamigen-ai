@@ -1,7 +1,7 @@
 "use client";
 
 import ProjectCard from "@/components/ui/ProjectCard";
-
+import GenerativeMusicFlow from "@/components/GenerativeMusicFlow";
 import {
   FaCode,
   FaMusic,
@@ -30,7 +30,7 @@ export default function Home() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" as const },
+      transition: { duration: 0.8, ease: "easeOut" as const },
     },
   };
 
@@ -39,26 +39,26 @@ export default function Home() {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.8, ease: "easeOut", delay: 0.3 },
+      transition: { duration: 0.8, ease: "easeOut", delay: 0.3 as const },
     },
   };
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* BACKGROUND LAYER */}
+      {/* --- BACKGROUND LAYER ADDED HERE --- */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div
+        <div 
           className="absolute inset-0 opacity-20 dark:opacity-40"
           style={{
-            backgroundImage: `url('/images/background/music-notes-flow.png')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundImage: `url('/images/backgrounds/music-notes-flow.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-cosmos-950/80 via-cosmos-950/90 to-cosmos-950" />
       </div>
 
-      {/* ---  CONTENT --- */}
+      {/* --- ORIGINAL CONTENT START --- */}
       <section className="relative z-10 flex flex-col items-center min-h-[80vh] pt-12 pb-24 overflow-hidden">
         {/* 1. HERO TEXT */}
         <div className="mb-16 text-center max-w-4xl mx-auto px-4">
@@ -98,9 +98,8 @@ export default function Home() {
                 My flagship project,{" "}
                 <strong className="text-white">QaraamiGen AI</strong>, uses deep
                 learning to analyze decades of traditional Oud recordings. It
-                doesn't just replicate sound; it understands the{" "}
-                <em>Qaraami</em> (scales) to generate new compositions that
-                honor the past.
+                doesn't just replicate sound; it understands the <em>Qaraami</em>{" "}
+                (scales) to generate new compositions that honor the past.
               </p>
 
               {/* Small Project Cards */}
@@ -117,6 +116,8 @@ export default function Home() {
 
             {/* Right: The Generative Animation */}
             <div className="relative h-[500px] w-full">
+              <GenerativeMusicFlow />
+
               {/* Background Glow Effect behind the cards */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-neon-purple/20 blur-[100px] rounded-full -z-10 pointer-events-none" />
             </div>
@@ -176,22 +177,22 @@ export default function Home() {
           className="max-w-5xl mx-auto mb-16 p-8 bg-cosmos-800/70 backdrop-blur-sm rounded-xl border border-white/10 shadow-lg"
         >
           <h2 className="text-3xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-neon-cyan to-white">
-            SOMALI MUSIC
+            SOMALI MUSIC HEROES
           </h2>
           <div className="grid md:grid-cols-3 my-5"></div>
 
           <p className="text-lg text-gray-300 text-center mb-10">
             My passion for computational music is deeply intertwined with my
             cultural roots and appreciation for traditional Somali music,
-            especially the rich sounds of the Oud. This project is a step
-            towards exploring how technology can serve as a bridge to
-            understand, create, and preserve diverse musical heritages.
+            especially the rich sounds of the Oud. This project is a step towards
+            exploring how technology can serve as a bridge to understand, create,
+            and preserve diverse musical heritages.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 items-center">
             {/* Video of Oud Playing/Somali Music */}
             <motion.div
-              variants={mediaVariants}
+              
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
@@ -230,7 +231,7 @@ export default function Home() {
 
             {/* Image of Oud/Somali Music Performance */}
             <motion.div
-              variants={mediaVariants}
+             
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
@@ -253,7 +254,7 @@ export default function Home() {
               </div>
             </motion.div>
             <motion.div
-              variants={mediaVariants}
+            
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
@@ -313,12 +314,12 @@ export default function Home() {
 
         <div className="max-w-3xl mx-auto text-center text-gray-400 pb-32">
           <p className="text-lg mb-4 font-mono">
-            "The future of music lies at the intersection of human creativity
-            and machine intelligence."
+            "The future of music lies at the intersection of human creativity and
+            machine intelligence."
           </p>
           <p className="text-sm italic">
-            — A guiding principle in my pursuit of the Master of Science in
-            Music Technology and Computation.
+            — A guiding principle in my pursuit of the Master of Science in Music
+            Technology and Computation.
           </p>
         </div>
       </section>
