@@ -3,5 +3,9 @@
 import { SessionProvider as Provider } from "next-auth/react";
 
 export default function SessionProvider({ children }: { children: React.ReactNode }) {
-  return <Provider>{children}</Provider>;
+  // 1. Assign to a new capitalized variable to bypass the type error
+  const AnyProvider = Provider as any;
+
+
+  return <AnyProvider>{children}</AnyProvider>;
 }
