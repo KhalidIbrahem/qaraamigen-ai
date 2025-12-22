@@ -8,10 +8,8 @@
     "start": "next start",
     "lint": "eslint"
   },
-  "overrides": {
-  "@types/react": "latest",
-  "@types/react-dom": "latest"
-},
+ 
+
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "@radix-ui/react-slot": "^1.2.4",
