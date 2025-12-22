@@ -1,0 +1,21 @@
+# Dependencies (The culprit of the 34k files)
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js Build Output
+.next/
+out/
+build/
+
+# System Files
+.DS_Store
+.env
+.env.local
+
+# Large Audio Data (The other culprit)
+dataset/
+*.wav
+*.mp3
+*.mscz
+*.musicxml
