@@ -10,7 +10,7 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import { useState, useEffect } from "react";
-import { FaMicrochip, FaStar, FaGoogle, FaSignOutAlt } from "react-icons/fa";
+import { FaMicrochip, FaGoogle, FaSignOutAlt } from "react-icons/fa";
 
 import { useSession, signIn, signOut } from "next-auth/react";
 
@@ -25,7 +25,45 @@ const NAV_LINKS = [
   { name: "Contact", href: "/contact" },
 ];
 
-// --- COMPONENTS ---
+// --- ANIMATION VARIANTS (Fixed Types) ---
+const menuVars = {
+  initial: { scaleY: 0 },
+  animate: {
+    scaleY: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0.12, 0, 0.39, 0] as const, // Added 'as const'
+      staggerChildren: 0.09,
+    },
+  },
+  exit: {
+    scaleY: 0,
+    transition: { 
+      delay: 0.2, 
+      duration: 0.5, 
+      ease: [0.22, 1, 0.36, 1] as const // Added 'as const'
+    },
+  },
+};
+
+const mobileLinkVars = {
+  initial: {
+    y: "30vh",
+    transition: { 
+      duration: 0.5, 
+      ease: [0.37, 0, 0.63, 1] as const // Added 'as const'
+    },
+  },
+  animate: { 
+    y: 0, 
+    transition: { 
+      duration: 0.7, 
+      ease: [0, 0.55, 0.45, 1] as const // Added 'as const'
+    } 
+  },
+};
+
+// --- COMPONENT HELPERS ---
 
 const NavLink = ({
   href,
@@ -96,31 +134,6 @@ const MobileNavLink = ({
   );
 };
 
-// --- ANIMATION VARIANTS ---
-const menuVars = {
-  initial: { scaleY: 0 },
-  animate: {
-    scaleY: 1,
-    transition: {
-      duration: 0.5,
-      ease: [0.12, 0, 0.39, 0],
-      staggerChildren: 0.09,
-    },
-  },
-  exit: {
-    scaleY: 0,
-    transition: { delay: 0.2, duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-  },
-};
-
-const mobileLinkVars = {
-  initial: {
-    y: "30vh",
-    transition: { duration: 0.5, ease: [0.37, 0, 0.63, 1] },
-  },
-  animate: { y: 0, transition: { duration: 0.7, ease: [0, 0.55, 0.45, 1] } },
-};
-
 // --- MAIN NAVBAR ---
 const Navbar = () => {
   const { scrollY } = useScroll();
@@ -186,10 +199,8 @@ const Navbar = () => {
 
             <div className="h-6 w-[1px] bg-gray-300 dark:bg-white/20"></div>
 
-            {/* DESKTOP AUTH & THEME */}
+            {/* DESKTOP AUTH */}
             <div className="flex items-center gap-4">
-       
-
               {session ? (
                 <div className="flex items-center gap-3">
                   <div className="relative w-8 h-8 rounded-full overflow-hidden border border-gray-300 dark:border-white/20 bg-blue-600 flex items-center justify-center">
@@ -277,10 +288,8 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* MOBILE AUTH & THEME SECTION */}
+            {/* MOBILE AUTH SECTION */}
             <div className="flex flex-col items-center gap-6 border-t border-gray-200 dark:border-white/10 pt-8 w-64">
-        
-
               {session ? (
                 <div className="flex flex-col items-center gap-2">
                   <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-blue-500">
