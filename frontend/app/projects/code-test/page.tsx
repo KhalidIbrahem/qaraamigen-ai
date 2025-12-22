@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from 'react'
-import { motion } from "framer-motion";
+import { motion} from "framer-motion";
 import Image from "next/image"; 
 import CodeBlock from "@/components/ui/CodeBlock";
 import { FaCodeBranch, FaVolumeUp, FaFileCode, FaPlayCircle, FaMusic, FaGuitar, FaKeyboard } from "react-icons/fa"; 
@@ -53,15 +53,15 @@ function VideoCard({ src, title, icon }: { src: string, title: string, icon: Rea
   );
 }
 
-export default function CodeTestPage() {
+export default function TechnicalPage() {
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } },
   };
 
   const mediaVariants = {
     hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.3 } },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.3 as const } },
   };
 
   return (
@@ -137,7 +137,7 @@ export default function CodeTestPage() {
             Writing robust Python code to manage digital audio synthesis, custom envelopes, and musical structures.
           </p>
           <motion.div
-            variants={mediaVariants}
+       
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.6 }}
