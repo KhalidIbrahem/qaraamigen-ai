@@ -14,8 +14,8 @@ build/
 .env.local
 
 # Large Audio Data (The other culprit)
-dataset/
-*.wav
-*.mp3
-*.mscz
-*.musicxml
+# dataset/
+# *.wav
+# *.mp3
+# *.mscz
+# *.musicxml
