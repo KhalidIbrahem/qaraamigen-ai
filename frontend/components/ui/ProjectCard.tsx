@@ -8,7 +8,7 @@ interface ProjectCardProps {
   description: string;
   href: string;
   icon: ReactNode;
-  accentColor: "cyan" | "purple"; // Different colors for different card types
+  accentColor: "cyan" | "purple"; 
 }
 
 const ProjectCard = ({ title, description, href, icon, accentColor }: ProjectCardProps) => {
